@@ -1,11 +1,23 @@
 import React from "react";
 import Layout from "../../components/Layout/index";
-import { Jumbotron } from "react-bootstrap";
+// import { Jumbotron } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import "./style.css";
+
 function Home(props) {
   return (
     <div>
       <Layout>
-        <Jumbotron
+        <Container fluid>
+          <Row lg={12}>
+            <Col md={2} className="sidebar">
+              sidebar
+            </Col>
+            <Col md={10} style={{paddingTop:60}}>Container</Col>
+          </Row>
+        </Container>
+
+        {/* <Jumbotron
           style={{ margin: "5rem", background: "#fff" }}
           className="text-center"
         >
@@ -16,7 +28,7 @@ function Home(props) {
             typeface without relying on meaningful content. Lorem ipsum may be
             used as a placeholder before final copy is available.
           </p>
-        </Jumbotron>
+        </Jumbotron> */}
       </Layout>
     </div>
   );

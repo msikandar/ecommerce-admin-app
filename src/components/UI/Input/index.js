@@ -1,19 +1,22 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-function Input(props) {
-  return (
-    <Form.Group controlId="formBasicEmail">
-      <Form.Label>{props.label}</Form.Label>
-      <Form.Control
-        type={props.type}
-        placeholder={props.placeholder}
-        value={props.value}
-        onChange={props.onChange}
-      />
-      <Form.Text className="text-muted">{props.error}</Form.Text>
-    </Form.Group>
-  );
+class Input extends React.Component {
+  render() {
+    return (
+      <Form.Group>
+        <Form.Label>{this.props.label}</Form.Label>
+        <Form.Control
+          type={this.props.type}
+          placeholder={this.props.placeholder}
+          value={this.props.value}
+          onChange={this.props.onChange}
+          autoComplete="on"
+        />
+        <Form.Text className="text-muted">{this.props.error}</Form.Text>
+      </Form.Group>
+    );
+  }
 }
 
 export default Input;
